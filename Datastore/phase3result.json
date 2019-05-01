@@ -1,0 +1,37 @@
+{
+    "3": {
+        "ques": "pink city",
+        "exp": "jaipur ",
+        "act": "jaipur",
+        "dif": "3",
+        "score": 30.0
+    },
+    "4": {
+        "ques": "write what you see are you ok yes no very good beyonh under influence",
+        "exp": "write what you see",
+        "act": "wrong",
+        "dif": "4",
+        "score": 0.0
+    },
+    "2": {
+        "ques": "how are you responding",
+        "exp": "nicely great poor bad good polite ohh good goind wonderful lets go",
+        "act": "poor",
+        "dif": "3",
+        "score": 12.0
+    },
+    "1": {
+        "ques": "how are you",
+        "exp": "i am good great well very sad",
+        "act": "great",
+        "dif": "2",
+        "score": 8.0
+    },
+    "0": {
+        "ques": "do you love your parents",
+        "exp": "yes no ",
+        "act": "yes no",
+        "dif": "1",
+        "score": 10.0
+    }
+}
