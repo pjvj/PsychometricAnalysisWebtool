@@ -1,0 +1,136 @@
+.card4{
+    display: inline-flex;
+    width: 100%;
+    height: 50%;
+    border: solid 1px darkslateblue;
+    min-height: 500px;
+    padding: 10px;
+    float: left;
+    margin: 5px;
+    margin-top: 15px;
+    background-color: lightsteelblue;
+}
+.card-body4{
+    background-color: lavender;
+    padding: 10px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-title4{
+    color: darkblue;
+    font-family: fantasy;
+    font-weight: 600;
+    font-size: larger;
+}
+.card-text4{
+    font-size: medium;
+    width: 70%;
+    height: 450px;
+    font-family: inherit;
+    color:black;
+    overflow: scroll;
+}
+.card14{
+    display: inline-flex;
+    width: 100%;
+    height: 50%;
+    border: solid 1px darkslateblue;
+    min-height: 700px;
+    padding: 10px;
+    float: left;
+    margin: 5px;
+    margin-top: 15px;
+    background-color: lightsteelblue;
+}
+.card1-body4{
+    background-color: lavender;
+    padding: 10px;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card1-title4{
+    color: darkblue;
+    font-family: fantasy;
+    font-weight: 600;
+    font-size: larger;
+}
+.card1-text4{
+    font-size: medium;
+    width: 100%;
+    height: 650px;
+    font-family: inherit;
+    color:black;
+    overflow: scroll;
+}
+.showResult{
+    width: 150px;
+    background-color: lightsteelblue;
+    border: solid 0.5px steelblue;
+    padding: 5px;
+    cursor: pointer;
+    font-size: larger;
+    align-self: center;
+    float: right;
+}
+.Unfold{
+    position: relative;
+    align-content: center;
+    /* left: 18px;
+    bottom: 15px; */
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+table, td, th {
+border: 1px solid black;
+background-color: skyblue;
+}
+
+
+.scoreTableCell {
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+    align-items: center;
+    border: none;
+    text-align: center;
+}
+.imageTableCell{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: center;
+    border: none;
+}
+.chartTableCell{
+    padding: 15px;
+    padding-left: 12px;
+    display: table-cell;
+}
+.analysisRow {
+    border: 1px solid black;
+}
+.emoanalysisRow{
+    border: 1px solid black;
+}
+.chatbot-con{
+    border: 1px solid black;
+    align-content: center;
+}
+.chatbot{
+    padding: 10px;
+    text-align: left
+
+}
+.chatbot1{
+    padding: 10px;
+    text-align: center
+}

@@ -1,0 +1,163 @@
+section {
+    display: block;
+}
+
+.main-body h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0 0 1em 0;
+    
+}
+
+.main-head-para{
+    color: white;
+}
+
+.main-head-para.h5 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.main-heading{
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 3.5rem;
+}
+
+@media screen and (max-width: 980px)
+{
+    #banner {
+        background-attachment: scroll;
+    }
+}
+@media screen and (max-width: 1280px)
+{
+    #banner {
+        padding: 10em 2em 8em 2em;
+    }
+}
+#banner {
+    padding: 12em 0 10em 0;
+    background-image: url("./space-facts.jpg");
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-top: 0.5em solid #5385c1;
+}
+
+.flex {
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+}
+
+section.special, article.special {
+    text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+    #flex.flex-2 article {
+        width: 100%;
+        margin-bottom: 3em;
+    }
+}
+.flex.flex-2 article {
+    width: 47%;
+}
+section.special article, article.special article {
+    text-align: left;
+}
+
+.image.fit {
+    display: block;
+    margin: 0 0 2em 0;
+    width: 100%;
+}
+.image {
+    border-radius: 0;
+    border: 0;
+    display: inline-block;
+    position: relative;
+}
+.image.fit img {
+    width: 100%;
+}
+.image img {
+    border-radius: 0;
+    /* display: block; */
+}
+section.wrapper article header, article.wrapper article header {
+    margin: 0;
+}
+@media screen and (max-width: 736px) {
+    section.wrapper header, article.wrapper header {
+        margin-bottom: 2em;
+    }
+}
+section.wrapper header, article.wrapper header {
+    margin-bottom: 4em;
+}
+p {
+    margin: 0 0 2em 0;
+}
+
+@media screen and (max-width: 1280px) {
+    .inner {
+        max-width: 90%;
+    }
+}
+.inner {
+    max-width: 75em;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 736px) {
+    section.wrapper header, article.wrapper header {
+        margin-bottom: 2em;
+    }
+}
+section.wrapper header, article.wrapper header {
+    margin-bottom: 4em;
+}
+.align-center {
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+@media screen and (max-width: 736px) {
+    section.wrapper header h2, article.wrapper header h2 {
+        font-size: 2em;
+    }
+}
+section.wrapper header h2, article.wrapper header h2 {
+    font-size: 2.75em;
+    /*margin: 0 0 .5em 0;*/
+}
+h2 {
+    font-size: 1.75em;
+    font-weight: 100;
+}
+h3 {
+    font-size: 1.25em;
+    
+}
+.main-body{
+    background-color: lightsteelblue;
+}

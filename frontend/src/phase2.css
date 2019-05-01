@@ -1,0 +1,111 @@
+.givenans{
+    height: 60px;
+    width: inherit;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.displayques{
+    font-family: serif;
+    border: solid 1px lightsteelblue;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 300;
+}
+
+
+.row startrow{
+    margin: 20px;
+    position: relative;
+
+}
+.testtogive{
+    overflow: overlay;
+    margin-left: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    width: 30%;
+    font-size: larger;
+    font-style: italic;
+    font-family: monospace;
+    min-height: 40px;
+}
+
+.para{
+    margin-top: 20px;
+    margin-left: 5px;
+
+}
+
+
+.submitanswer{
+    background-color: lightsteelblue;
+    border: solid 0.5px steelblue;
+    padding: inherit;
+}
+
+.card2{
+    display: inline-flex;
+    width: 45%;
+    height: 100%;
+    border: solid 1px darkslateblue;
+    min-height: 500px;
+    padding: 10px;
+    float: right;
+    margin: 5px;
+    margin-top: 15px;
+    background-color: black;
+}
+.card-body2{
+    background-color: moccasin;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+.card-title2{
+    color: saddlebrown;
+    font-family: fantasy;
+    font-weight: 600;
+    font-size: larger;
+}
+.card-text2{
+    font-size: medium;
+    font-family: inherit;
+    color: black;
+}
+
+.imagesenti{
+    width: 100%;
+    height: 365px;
+}
+
+.changeimgp{
+    background-color: cornsilk;
+    border: solid 0.5px LAVENDERBLUSH;
+    padding: 5px;
+    font-size: 20px;
+    float: left;
+}
+.changeimgn{
+    background-color: cornsilk;
+    border: solid 0.5px LAVENDERBLUSH;
+    padding: 5px;
+    font-size: 20px;
+    float: right;
+}
+.phasebutton{
+    padding: 2px 6px;
+    font-size: 20px;
+    cursor: grabbing;
+    text-align: center;
+    margin-left: 5px;
+    float: right;
+    margin-bottom: 10px;
+}
+.sentians{
+    width: -webkit-fill-available;
+    font-size: large;
+    padding: 5px;
+    font-family: fantasy;
+    height: 365px;
+}

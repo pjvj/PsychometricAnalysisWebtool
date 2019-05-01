@@ -1,0 +1,115 @@
+.quesans{
+    font-size: large;
+    font-style: inherit;
+    font-family: serif;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  
+  }
+  .difficulty{
+    font-size: large;
+    font-style: inherit;
+    font-family: serif;
+    width: 50%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  .testinput{
+    font-size: large;
+    font-style: inherit;
+    font-family: serif;
+    width: 30%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  .test1{
+      padding: 6px 10px;
+      position: inherit;
+      float: inherit;
+      margin-top: 10px;
+  }
+  .test2{
+      padding: 6px 12px;
+      position: inherit;
+      float: inherit;
+      margin-top: 20px;
+  }
+  
+  .tab {
+      overflow: hidden;
+      border: 2px solid #ccc;
+      background-color: #f1f1f1;
+    }
+  
+  .tablinks{
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 25px;
+      font-family: fantasy;
+      font-weight: 900;
+    }
+    /* Change background color of buttons on hover */
+  .tablinks:hover {
+      background-color: #ddd;
+    }
+     
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: darkslategray;
+    } 
+  
+  .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  
+    .tableques{
+      width: -webkit-fill-available;
+    }
+  
+    .addbutton{
+      padding: 2px 6px;
+      font-size: 16px;
+      cursor: grabbing;
+      text-align: center;
+      margin-left: 4px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+  
+    .deletebutton{
+      padding: 4px 8px;
+      font-size: 16px;
+      cursor: grabbing;
+      text-align: center;
+      margin-left: 4px;
+    }
+  
+    .submitdiv{
+      margin: 20px;
+    }
+  
+    .selecttest{
+      width: 30%;
+      height: 30px;
+      text-align: center;
+      font-size: larger;
+      padding: 8px;
+    }

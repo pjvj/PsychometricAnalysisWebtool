@@ -1,0 +1,139 @@
+.row startrow{
+    margin: 20px;
+    position: relative;
+
+}
+.audio-div{
+    width: 40%
+}
+
+.card1{
+    display: inline-flex;
+    width: 48%;
+    height: 50%;
+    border: solid 1px darkslateblue;
+    min-height: 500px;
+    padding: 10px;
+    float: left;
+    margin: 5px;
+    margin-top: 15px;
+    background-color: lightsteelblue;
+}
+.card-body1{
+    background-color: lavender;
+    padding: 10px;
+    width: 97%;
+    height: 100%;
+}
+.card-title1{
+    color: darkblue;
+    font-family: fantasy;
+    font-weight: 600;
+    font-size: larger;
+}
+.card-text1{
+    font-size: medium;
+    font-family: inherit;
+    color: steelblue;
+}
+
+.capture{
+    inline-size: -webkit-fill-available;
+    background-color: lightsteelblue;
+    border: solid 0.5px steelblue;
+    padding: 5px;
+    cursor: pointer;
+    font-size: larger;
+}
+/* .startrec{
+    background-color: lightsteelblue;
+    border: solid 0.5px steelblue;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    float: left;
+}
+.stoprec{
+    cursor: pointer;
+    background-color: lightsteelblue;
+    border: solid 0.5px steelblue;
+    padding: 5px;
+    font-size: 20px;
+    float: right;
+} */
+.facescore{
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    font-size: larger;
+    font-family: fantasy;
+}
+
+.videofeed{
+    float: left;
+    position: relative;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-content: stretch;
+    place-content: space-evenly;
+    width:-webkit-fill-available
+}
+.threebuttons{
+    display: inline;
+    position: relative;
+}
+
+.submitanswer{
+    background-color: lightsteelblue;
+    border: solid 0.5px steelblue;
+    padding: inherit;
+}
+.card{
+    display: inline-flex;
+    width: 45%;
+    border: solid 1px darkslateblue;
+    min-height: 500px;
+    padding: 10px;
+    float: right;
+    margin: 5px;
+    margin-top: 15px;
+    background-color: lightsteelblue;
+}
+.card-body{
+    background-color: lavender;
+    padding: 10px;
+    width: 96%;
+    height: 100%;
+position:relative;
+}
+.card-title{
+    color: darkblue;
+    font-family: fantasy;
+    font-weight: 600;
+    font-size: larger;
+}
+.card-text{
+    font-size: medium;
+    font-family: inherit;
+    color: steelblue;
+}
+.queschangerow{
+    display: flow-root;
+    margin: 10px;
+    align-self: flex-end;
+}
+.changequesp{
+    background-color: lightsteelblue;
+    border: solid 0.5px steelblue;
+    padding: 5px;
+    font-size: 20px;
+    float: left;
+}
+.changequesn{
+    background-color: lightsteelblue;
+    border: solid 0.5px steelblue;
+    padding: 5px;
+    font-size: 20px;
+    float: right;
+}
