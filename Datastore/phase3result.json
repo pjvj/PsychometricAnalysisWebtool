@@ -4,34 +4,34 @@
         "exp": "jaipur ",
         "act": "jaipur",
         "dif": "3",
-        "score": 30.0
-    },
-    "4": {
-        "ques": "write what you see are you ok yes no very good beyonh under influence",
-        "exp": "write what you see",
-        "act": "wrong",
-        "dif": "4",
-        "score": 0.0
+        "score": 27.0
     },
     "2": {
         "ques": "how are you responding",
-        "exp": "nicely great poor bad good polite ohh good goind wonderful lets go",
-        "act": "poor",
+        "exp": "nicely great poor bad good polite",
+        "act": "good",
         "dif": "3",
-        "score": 12.0
+        "score": 9.0
     },
     "1": {
         "ques": "how are you",
         "exp": "i am good great well very sad",
-        "act": "great",
+        "act": "very well ",
         "dif": "2",
-        "score": 8.0
+        "score": 10.0
     },
     "0": {
         "ques": "do you love your parents",
         "exp": "yes no ",
-        "act": "yes no",
+        "act": "yes ",
         "dif": "1",
-        "score": 10.0
+        "score": 6.0
+    },
+    "4": {
+        "ques": "write what you see",
+        "exp": "write what you see",
+        "act": "what you see",
+        "dif": "4",
+        "score": 36.0
     }
 }

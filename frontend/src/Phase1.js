@@ -231,7 +231,7 @@
                                             />
                                         </div>
                                         <div className=" threebuttons">
-                                                <button className="capture" name="capture" onClick={this.captureOne}>Capture</button>
+                                                {/* <button className="capture" name="capture" onClick={this.captureOne}>Capture</button> */}
                                                 {/* <button className="startrec" name="startrec" onClick={this.Recording}>StartRec</button>
                                                 <button className="stoprec" name="stoprec" onClick={this.Recording}>StopRec</button> */}
                                         </div>
@@ -249,26 +249,21 @@
                                             <button className="changequesn" name="quesnext" onClick={this.handleQuestion}>Next</button>
                                         </div>
                                         <div className="audio-div">
-                                            {(this.state.refresh%2===0)?(
+                                            
                                                 <ReactMicRecord
                                                 record={this.state.record}
                                                 className="sound-wave"
                                                 onStop={this.onStop}
                                                 onData={this.onData}
-                                                strokeColor="#000000"
-                                                backgroundColor="#FF4081" 
-                                                />):(
-                                                <ReactMicRecord
-                                                record={this.state.record}
-                                                className="sound-wave"
-                                                onStop={this.onStop}
-                                                onData={this.onData}
-                                                strokeColor="#000000"
-                                                backgroundColor="#FF4081" 
-                                                />)
-                                            }
-                                            <button className="startrec" name="startrec" onClick={this.Recording} type="button">Start</button>
-                                            <button className="stoprec" name="stoprec" onClick={this.Recording} type="button">Stop</button>
+                                                // strokeColor="#000000"
+                                                // backgroundColor="#FF4081" 
+                                                />
+                                              
+                                            
+                                            </div>
+                                        <div className="queschangerow">
+                                            <button className="startrec" name="startrec" onClick={this.Recording} type="button">StartRecording</button>
+                                            <button className="stoprec" name="stoprec" onClick={this.Recording} type="button">StopRecording</button>
                                         </div>
                                         {/* <div className="row">
                                         <textarea type="text" className="givenans" id={"answer"+this.state.qid} name={"answer"+this.state.qid} placeholder="Answer"/>
