@@ -113,9 +113,9 @@ section.wrapper article header, article.wrapper article header {
 section.wrapper header, article.wrapper header {
     margin-bottom: 4em;
 }
-p {
+/* p {
     margin: 0 0 2em 0;
-}
+} */
 
 @media screen and (max-width: 1280px) {
     .inner {

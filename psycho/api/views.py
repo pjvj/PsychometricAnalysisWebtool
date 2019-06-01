@@ -170,7 +170,7 @@ class FindSentiment(APIView):
         if anss:
             # output_emots=[]
             for ans in anss:
-                createfeed=pd.read_csv('../sentimentfinallexicon.csv',index_col=0)
+                createfeed=pd.read_csv('../finallexicon.csv',index_col=0)
                 feature_values=[0,0,0]
                 str_result = text_cleaner(ans)
                 words= str_result.split()
@@ -202,11 +202,21 @@ class FindSentiment(APIView):
             #return Response(status_code=404)
 
 class RecordFindSentiment(APIView):
-    confident_words = {'absolute', 'absolutely', 'affirm', 'affirmative', 'affirmed', 'aim', 'assert', 'assertive', 'assure', 'assured', 'assuredly', 'belief', 'believe', 'believed', 'believing', 'beyond doubt', 'bold', 'boldly', 'by myself', 'calm', 'can', 'can be confident', 'capable', 'certain', 'certain belief', 'certain of', 'certainly', 'certainty', 'clear', 'clearly', 'collected', 'complete confidence', 'completely', 'concluded', 'conclusive', 'conclusively', 'confidence', 'confident', 'confident of', 'confidently', 'conviction', 'convinced', 'count on', 'counted on', 'counting on', 'courage', 'decide', 'decided', 'decidedly', 'decisive', 'decisively', 'definite', 'definitely', 'determined', 'determinedly', 'direct', 'directly', 'doubtless', 'doubtlessly', 'downright', 'ease', 'easily', 'easy', 'encouraged', 'entrust', 'faith', 'fearless', 'feel certain', 'feel sure', 'firm', 'firm belief', 'firmly', 'firmly convinced', 'for certain', 'for sure', 'full confidence', 'fully confident', 'fully convinced', 'give confidence', 'great confidence', 'great faith', 'happy', 'have faith', 'have no doubt', 'have trust', 'having confidence in', 'heartily', 'high hopes', 'unwavering', 'hopeful', 'immediately', 'in the belief', 'indisputably', 'instantly', 'know', 'know about that', 'know for certain', 'literally', 'lot of confidence', 'lot of faith', 'of course', 'opine', 'opinion', 'optimistic', 'optimistically', 'outright', 'particular', 'particularly', 'passion', 'perfect', 'perfectly', 'persuade', 'persuasive', 'positive', 'positively', 'power', 'put faith in', 'questionless', 'questionlessly', 'really', 'resolve', 'resolved', 'rest assured', 'satisfied', 'simply', 'specific', 'specifically', 'strength', 'strong belief', 'strong opinion', 'strongly believe', 'sure', 'sure about', 'sure of it', 'sure of that', 'sure thing', 'surely', 'therefore', 'thorough', 'thoroughly', 'together', 'undaunted', 'undeniable', 'undeniably', 'undoubtedly', 'unquestionably', 'want', 'will', 'with conviction', 'without a doubt', 'without doubt', 'yeah', 'yes', 'you got to trust'}
-    unconfident_words = {'actual', 'actually', 'allegedly', 'am afraid', 'anxiety', 'anxious', 'apparently', 'attempt', 'bewildered', 'bother', 'cannot decide', 'concern', 'confused', 'could', 'dazed', 'difficult', 'difficulty', 'dilemma', 'disbelief', 'do not think that', 'dou you mind', 'doubt that', 'doubtful', 'dubious', 'fail', 'falter', 'fear', 'funny feeling', 'give up', 'good enough', 'good luck', 'got lucky', 'guess', 'guesswork', 'gut feeling', 'hang back', 'hard to say', 'hesitant', 'hope to', 'hopefully', 'hunch', 'i cannot', 'i do not know', 'i feel', 'i just', 'i think', 'if it is alright', 'if it is okay', 'if only', 'impossible', 'indecisive', 'it appears', 'it looks like', 'it seems', 'just luck', 'kind of', 'lack', 'like i said earlier', 'likely', 'literally', 'little bit', 'little credit', 'little faith', 'lose', 'loss', 'lost', 'may', 'maybe', 'mildly', 'misgiving', 'mistrust', 'mixed up', 'need', 'no', 'no expert', 'not possible', 'notion', 'of the impression', 'often', 'perhaps', 'possibly', 'puzzle', 'quandary', 'quit', 'sense', 'sensed', 'shy', 'sneaking suspicion', 'so', 'sort of', 'still', 'surprised', 'suspect', 'suspicion', 'suspicious', 'think', 'tired', 'tiresome', 'tiring', 'trouble', 'try', 'um', 'uncertain', 'uneasiness', 'uneasy', 'unnerving', 'unpredictable', 'usually', 'waver', 'well', 'what if', 'wonder', 'worried', 'worrisome', 'worry', 'worrying', 'would it be alright', 'would it be okay', 'would you mind'}
-    certain_words = {'absolutely', 'am', 'are', 'believe', 'beyond doubt', 'can', 'cannot', 'certain', 'certain belief', 'certain of', 'certainly', 'certainty', 'clear', 'clearly', 'could', 'decide', 'definite', 'definitely', 'determine', 'doubtless', 'doubtlessly', 'have to', 'is', 'know', 'must', 'must be able to', 'must have to', 'need to', 'never', 'no doubt', 'obvious', 'obviously', 'ought', 'ought to be able', 'ought to have', 'positive', 'quite certain', 'quite sure', 'realise', 'should', 'should be able to', 'should have', 'should have to', 'sure', 'surely', 'undoubtedly', 'very certain', 'very sure', 'want to', 'was', 'were', 'will', 'will be able to', 'will have', 'will have to', 'without a doubt', 'would', 'would be able to', 'would have to'}
-    uncertain_words = {'allegedly', 'apparently', 'as far as', 'assume', 'can be able to', 'can have', 'cannot decide', 'could be able to', 'could have', 'could have to', 'doubt', 'doubtful', 'doubtfully', 'guess', 'imagine', 'it appears', 'it seems', 'likely', 'may', 'may be able to', 'may have', 'may have to', 'maybe', 'might', 'might be able to', 'might have', 'might have to', 'must have', 'not certain', 'not decide', 'not definite', 'not sure', 'perchance', 'possible', 'possibly', 'presume', 'presuppose', 'probable', 'probably', 'reckon', 'seem', 'seemingly', 'seems', 'shall', 'shall be able to', 'shall have', 'shall have to', 'suppose', 'supposedly', 'surmise', 'think', 'uncertain', 'unlikely', 'unsure', 'would have'}
+    conf1 = {'absolute', 'absolutely', 'affirm', 'affirmative', 'affirmed', 'aim', 'assert', 'assertive', 'assure', 'assured', 'assuredly', 'belief', 'believe', 'believed', 'believing', 'bold', 'boldly', 'calm', 'can', 'capable', 'certain', 'certainly', 'certainty', 'clear', 'clearly', 'collected', 'completely', 'concluded', 'conclusive', 'conclusively', 'confidence', 'confident', 'confidently', 'conviction', 'convinced', 'courage', 'decide', 'decided', 'decidedly', 'decisive', 'decisively', 'definite', 'definitely', 'determined', 'determinedly', 'direct', 'directly', 'doubtless', 'doubtlessly', 'downright', 'ease', 'easily', 'easy', 'encouraged', 'entrust', 'faith', 'fearless', 'firm', 'firmly', 'happy', 'heartily', 'unwavering', 'hopeful', 'immediately', 'indisputably', 'instantly', 'know', 'literally', 'opine', 'opinion', 'optimistic', 'optimistically', 'outright', 'particular', 'particularly', 'passion', 'perfect', 'perfectly', 'persuade', 'persuasive', 'positive', 'positively', 'power', 'questionless', 'questionlessly', 'really', 'resolve', 'resolved', 'satisfied', 'simply', 'specific', 'specifically', 'strength', 'sure', 'surely', 'therefore', 'thorough', 'thoroughly', 'together', 'undaunted', 'undeniable', 'undeniably', 'undoubtedly', 'unquestionably', 'want', 'will', 'yeah', 'yes'}
+    conf2 = {'beyond doubt', 'by myself', 'certain belief', 'certain of', 'complete confidence', 'confident of', 'count on', 'counted on', 'counting on', 'feel certain', 'feel sure', 'firm belief', 'firmly convinced', 'for certain', 'for sure', 'full confidence', 'fully confident', 'fully convinced', 'give confidence', 'great confidence', 'great faith', 'have faith', 'have trust', 'high hopes', 'of course', 'rest assured', 'strong belief', 'strong opinion', 'strongly believe', 'sure about', 'sure thing', 'with conviction', 'without doubt'}
+    conf3 = {'can be confident', 'have no doubt', 'have confidence in', 'in the belief', 'know about that', 'know for certain', 'lot of confidence', 'lot of faith', 'put faith in', 'sure of it', 'sure of that', 'without a doubt', 'you got to', 'you have to'}
 
+    unconf1 = {'actual', 'actually', 'allegedly', 'anxiety', 'anxious', 'apparently', 'attempt', 'bewildered', 'bother', 'concern', 'confused', 'could', 'dazed', 'difficulty', 'dilemma', 'doubtful', 'dubious', 'fear', 'guess', 'guesswork', 'hesitant', 'hopefully', 'hunch', 'impossible', 'indecisive', 'lack', 'likely', 'literally', 'lose', 'loss', 'lost', 'may', 'misgiving', 'puzzle', 'shy', 'so', 'still', 'suspect', 'suspicion', 'suspicious', 'tiresome', 'um', 'uncertain', 'uneasiness', 'uneasy', 'unnerving', 'unpredictable', 'usually', 'waver', 'well', 'wonder', 'worried', 'worrisome', 'worry', 'worrying', 'difficult', 'disbelief', 'fail', 'falter', 'maybe', 'mildly', 'mistrust', 'need', 'no', 'notion', 'often', 'perhaps', 'possibly', 'quandary', 'sense', 'try', 'quit', 'sensed', 'surprised', 'think', 'tired', 'tiring', 'trouble'}
+    unconf2 = {'am afraid', 'cannot decide', 'funny feeling', 'give up', 'good enough', 'good luck', 'gut feeling', 'hang back', 'i cannot', 'i think', 'if only', 'it appears', 'it seems', 'just luck', 'kind of', 'little bit', 'little credit', 'little faith', 'mixed up', 'sort of', 'what if', 'not sure', 'not certain', 'got lucky', 'hope to', 'i feel', 'i just', 'no expert', 'not possible', 'sneaking suspicion', 'doubt that'}
+    unconf3 = {'dou you mind', 'hard to say', 'it looks like', 'would you mind', 'not too sure', 'not very sure', 'not very certain', 'of the impression', 'not too certain', 'do not think', 'if it is', 'like i said', 'would it be', 'do not know', 'not so sure', 'not too certain', 'not so certain'}
+
+    cert1 = {'absolutely', 'am', 'believe', 'can', 'cannot', 'certain', 'certainly', 'certainty', 'clear', 'clearly', 'could', 'decide', 'determine', 'doubtless', 'doubtlessly', 'obvious', 'obviously', 'ought', 'realise', 'should', 'undoubtedly', 'would', 'are', 'is', 'know', 'must', 'never', 'sure', 'surely', 'was', 'were', 'will', 'definitely', 'definite', 'positive'}
+    cert2 = {'beyond doubt', 'certain belief', 'very sure', 'want to', 'will have', 'certain of', 'have to', 'need to', 'quite sure', 'no doubt', 'should have', 'quite certain', 'very certain', 'must be', 'will be', 'should be', 'would be'}
+    cert3 = {'must have to', 'will have to', 'without a doubt', 'would have to', 'ought to have', 'should have to', 'ought to be'}
+
+    uncert1 = {'allegedly', 'apparently', 'assume', 'doubt', 'doubtful', 'doubtfully', 'guess', 'imagine', 'may', 'maybe', 'might', 'perchance', 'presume', 'presuppose', 'probable', 'reckon', 'suppose', 'supposedly', 'surmise', 'uncertain', 'possible', 'possibly', 'probably', 'seems', 'unlikely', 'unsure', 'shall', 'think', 'likely', 'seemingly', 'presumably'}
+    uncert2 = {'can have', 'could have', 'it appears', 'may have', 'not definite', 'shall have', 'would have', 'cannot decide', 'might have', 'must have', 'it seems', 'not certain', 'not decide', 'not sure', 'can be', 'could be', 'may be', 'might be', 'shall be'}
+    uncert3 = {'could have to', 'may have to', 'shall have to', 'not too sure', 'as far as', 'not too certain', 'not very sure', 'might have to', 'not very certain', 'not so sure', 'not so certain'}
     def post(self, request, format=None):
         audios=[]
         pattern1=r'rec(.*).wav'
@@ -218,6 +228,7 @@ class RecordFindSentiment(APIView):
         audios.sort()
         print(audios)
         output_emots=[]
+
         r = sr.Recognizer()
         for file in audios:
             filename=""+dirr+file
@@ -243,33 +254,47 @@ class RecordFindSentiment(APIView):
                 cert=l[1]
                 output_emot=[conf,cert]
                 output_emots.append(output_emot)
-        return Response(output_emots)
+        return Response([output_emots,ans])
         return Response(status=status.HTTP_404_NOT_FOUND)
               
     def calculate_score(self,text):
         text = text.lower()
+        text = contrac_pattern.sub(lambda x: contractions[x.group()], text)
         text = re.sub(r'[^a-zA-Z0-9\s]', ' ', text)
-        x = []
-        n_grams = ngrams(text.split(), 4)
-        x += [' '.join(grams) for grams in n_grams]
+        grams1, grams2, grams3 = [], [], []
         n_grams = ngrams(text.split(), 3)
-        x += [' '.join(grams) for grams in n_grams]
+        grams3 = [' '.join(grams) for grams in n_grams]
         n_grams = ngrams(text.split(), 2)
-        x += [' '.join(grams) for grams in n_grams]
+        grams2 = [' '.join(grams) for grams in n_grams]
         n_grams = ngrams(text.split(), 1)
-        x += [' '.join(grams) for grams in n_grams]
-        s1 = len(set(x) & self.confident_words)
-        s2 = len(set(x) & self.unconfident_words)
-        if (s1+s2)!=0:
-            confidence_score = (s1-s2)/(s1+s2)
+        grams1 = [' '.join(grams) for grams in n_grams]
+        
+        p1 = len(set(grams1) & self.conf1)
+        p2 = len(set(grams2) & self.conf2)
+        p3 = len(set(grams3) & self.conf3)
+        psum = p1 + 2*p2 + 3*p3
+        n1 = len(set(grams1) & self.unconf1)
+        n2 = len(set(grams2) & self.unconf2)
+        n3 = len(set(grams3) & self.unconf3)
+        nsum = n1 + 2*n2 + 3*n3
+        if (psum+nsum)!=0:
+            confidence_score = (psum-nsum)/(psum+nsum)
         else:
             confidence_score = 0
-        s1 = len(set(x) & self.certain_words)
-        s2 = len(set(x) & self.uncertain_words)
-        if (s1+s2)!=0:
-            certainty_score = (s1-s2)/(s1+s2)
+        
+        p1 = len(set(grams1) & self.cert1)
+        p2 = len(set(grams2) & self.cert2)
+        p3 = len(set(grams3) & self.cert3)
+        psum = p1 + 2*p2 + 3*p3
+        n1 = len(set(grams1) & self.uncert1)
+        n2 = len(set(grams2) & self.uncert2)
+        n3 = len(set(grams3) & self.uncert3)
+        nsum = n1 + 2*n2 + 3*n3
+        if (psum+nsum)!=0:
+            certainty_score = (psum-nsum)/(psum+nsum)
         else:
             certainty_score = 0
+
         return (confidence_score, certainty_score)
         
     def truncate(self,f, n):
@@ -316,7 +341,7 @@ class ChatterBot(APIView):
             print("aaya",a,index)
             if a==0:
                 q,index=self.ask_question( highscore, c,index)
-                response_data=q
+                response_data="Alright, so without further ado, lets start the interview.\n"+q
                 a =  a + 1
                 # b=b+1
                 c=c-1
@@ -379,7 +404,8 @@ class ChatterBot(APIView):
                 f.seek(0) 
                 json.dump(data, f, indent=4)
                 f.truncate()
-        
+                response_data = "Alright, that would be all for the interview. Feel free to ask any questions that you may have."
+                return Response(response_data, status=200)
         if not input_data:
             return Response({
                 'text': [

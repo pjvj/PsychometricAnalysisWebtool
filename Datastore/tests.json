@@ -1,9 +1,8 @@
 {
   "tests": [
-    "one",
-    "two",
-    "three",
-    "four",
-    "five"
+    "select a test",
+    "ItsBasic",
+    "DataScientistPosition",
+    "YourInterest"
   ]
 }

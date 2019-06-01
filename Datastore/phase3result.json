@@ -1,37 +1,37 @@
 {
-    "3": {
-        "ques": "pink city",
-        "exp": "jaipur ",
-        "act": "jaipur",
+    "4": {
+        "ques": "What is your philosophy towards work?",
+        "exp": "I have only one philosophy when it comes to work: every piece of work, regardless of size, has to be done on time and in the right manner.",
+        "act": "I believe that every piece of work must be completed on time and in the right way.",
         "dif": "3",
-        "score": 27.0
+        "score": 18.0
+    },
+    "3": {
+        "ques": "Are you willing to work overtime? Nights? Weekends?",
+        "exp": "Yes. I understand that being asked to work for an extended number of hours comes with a good reason in the first place, so I\u00edm ok with it. It an extra effort means something for the company, I will be happy to do it.",
+        "act": "Yes. I believe that there is a good reason for working overtime. I am fine with working extra hours. In fact, I will be more than happy to do it.",
+        "dif": "2",
+        "score": 12.0
     },
     "2": {
-        "ques": "how are you responding",
-        "exp": "nicely great poor bad good polite",
-        "act": "good",
-        "dif": "3",
-        "score": 9.0
+        "ques": "Are you a team player? Why or why not?",
+        "exp": "Yes, definitely. I am the one person every leader would want in his team. I have a great team spirit and like to work together with many people. I have strong communication skills. Whatever task is assigned to me, I make sure it meets and exceeds what is expected of me. I also make it a point to reach out to teammates whenever needed.",
+        "act": "Yes. I am a team player. I have a strong team spirit. I like working together and collaborating with people. My communication skills are pretty strong too. I also sincerely complete the tasks assigned to me.",
+        "dif": "2",
+        "score": 12.0
     },
     "1": {
-        "ques": "how are you",
-        "exp": "i am good great well very sad",
-        "act": "very well ",
-        "dif": "2",
-        "score": 10.0
+        "ques": "What (hard) skills do you have?",
+        "exp": "I am familiar with Python, R, statistics, probability, machine learning, deep learning, data science, data mining, data visualisation, natural language processing (NLP), keras, tensorflow.",
+        "act": "I am proficient in Python, statistics, machine learning, deep learning, data visualisation and nlp. I am familiar with keras and tensorflow.",
+        "dif": "1",
+        "score": 7.0
     },
     "0": {
-        "ques": "do you love your parents",
-        "exp": "yes no ",
-        "act": "yes ",
+        "ques": "What do you think are the soft skills required of a data scientist?",
+        "exp": "Curiosity, business acumen, communication skills, team work, team spirit, business writing, problem solving.",
+        "act": "Business knowledge, communication skills, team work, management, problem solving.",
         "dif": "1",
-        "score": 6.0
-    },
-    "4": {
-        "ques": "write what you see",
-        "exp": "write what you see",
-        "act": "what you see",
-        "dif": "4",
-        "score": 36.0
+        "score": 8.0
     }
 }

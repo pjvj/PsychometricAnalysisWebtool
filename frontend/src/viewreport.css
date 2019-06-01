@@ -33,6 +33,42 @@
     color:black;
     overflow: scroll;
 }
+
+.card9{
+    display: inline-flex;
+    width: 100%;
+    /* height: 50%; */
+    border: solid 1px darkslateblue;
+    min-height: 900px;
+    padding: 10px;
+    float: left;
+    margin: 5px;
+    margin-top: 15px;
+    background-color: lightsteelblue;
+}
+.card-body9{
+    background-color: lavender;
+    padding: 10px;
+    width: 100%;
+    height: 890px;
+    display: flex;
+    flex-direction: column;
+}
+.card-title9{
+    color: darkblue;
+    font-family: fantasy;
+    font-weight: 600;
+    font-size: larger;
+}
+.card-text9{
+    font-size: medium;
+    width: 100%;
+    /* height: 450px; */
+    font-family: inherit;
+    color:black;
+    overflow: scroll;
+}
+
 .card14{
     display: inline-flex;
     width: 100%;
@@ -96,14 +132,23 @@ background-color: skyblue;
 
 
 .scoreTableCell {
+    /* display: flex;
+    flex-direction: column; */
+    margin: 15px;
+    align-items: center;
+    border: none;
+    text-align: center;
+}
+.scoreTableCellsenti {
     display: flex;
     flex-direction: column;
-    margin: 24px;
+    margin: 15px;
     align-items: center;
     border: none;
     text-align: center;
 }
 .imageTableCell{
+    /* column-span: 2; */
     display: flex;
     flex-direction: column;
     margin: 5px;
@@ -133,4 +178,11 @@ background-color: skyblue;
 .chatbot1{
     padding: 10px;
     text-align: center
+}
+
+.fer-stuff{
+    display: contents;
+}
+.description-para{
+/* display: contents; */
 }

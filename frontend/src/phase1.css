@@ -4,9 +4,12 @@
 
 }
 .audio-div{
-    width: 40%
+    width: 300px;
 }
-
+canvas.sound-wave{
+    width:575px;
+    height: 70px;
+}
 .card1{
     display: inline-flex;
     width: 48%;

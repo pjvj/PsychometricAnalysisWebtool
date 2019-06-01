@@ -8,7 +8,7 @@
         // const fs = require('fs');
         const axios = require("axios");
         var FileSaver = require('file-saver');
-        var h=1;
+        // var h=1;
         // const audioContext =  new (window.AudioContext || window.webkitAudioContext)();
         
         // const recorder = new Recorder(audioContext, {
@@ -31,8 +31,10 @@
                     blob:null,
                     noofcaptures:0,
                     breakpoints:[],
+                    speechtext:""
 
                 }
+                this.onStop = this.onStop.bind(this)
             }
             setRef = webcam => {
                 this.webcam = webcam;
@@ -89,10 +91,10 @@
             onStop(recordedBlob) {
                 console.log('recordedBlob is: ', recordedBlob);
                 // localStorage.setItem("audioblob", JSON.stringify({"audioblob":recordedBlob}));   
-                FileSaver.saveAs(recordedBlob.blobURL, "rec"+h+".webm");
+                FileSaver.saveAs(recordedBlob.blobURL, "rec"+(this.state.qid+1)+".webm");
                 // () =>{
-                    
-                var x=900000000;
+                
+                var x=9000000000;
                 while(x--);
                 fetch("http://localhost:8000/FindEmotionSpeech/",
                     {
@@ -100,27 +102,29 @@
                         headers: new Headers({'content-type': 'application/json'}),
                         "withCredentials":true,
                         "mode":"cors",   
-                        body: JSON.stringify({"filenumber":""+h})
+                        body: JSON.stringify({"filenumber":""+(this.state.qid+1)})
                     }
                     ).then(response => {
                         return response.json()
                     }).then(response=>{
                         console.log("iske ander aaya hai.....")
                         console.log(response);
+                        // console.log("hhhhhhhhh",h)
                         var l=JSON.parse(localStorage.getItem("ser"));
-                        if(l)
+                        if(this.state.qid+1===1)
+                        {
+                            var x=[]
+                            x.push(response);
+                            localStorage.setItem("ser", JSON.stringify({"ser":x}));
+                        
+                        }
+                        else
                         {
                             var x=l.ser;
                             x.push(response);
                             localStorage.setItem("ser", JSON.stringify({"ser":x})); 
                         }
-                        else
-                        {
-                            var x=[]
-                            x.push(response);
-                            localStorage.setItem("ser", JSON.stringify({"ser":x})); 
-                        }
-
+                        var me = this;
                         fetch("http://localhost:8000/RecordFindSentiment/",
                         {
                             method: 'post',
@@ -131,16 +135,28 @@
                             return response.json();
                         }).then(data=>{
                             console.log("dataadatadatata",data);
-                            localStorage.setItem("sersenti", JSON.stringify({"sersenti":data})); 
+                            localStorage.setItem("sersenti", JSON.stringify({"sersenti":data[0]})); 
+                            me.setState({speechtext: data[1][data[1].length-1]},
+                                ()=>{
+                                    // var h=this.state.refresh;
+                                    // h=h+1;
+                                    // this.setState({refresh:h});
+                                });
+                               
+                            localStorage.setItem("speechtext", JSON.stringify({"speechtext":data[1]})); 
+                            console.log(me.state.speechtext);
                             
                         }).catch(err=>{
                             console.log(err);
                         });
+                            
                     }).catch(err=>{
                         console.log(err);
-                    })
-                    h=h+1;
+                    });
                     
+                    var h=this.state.refresh;
+                                    h=h+1;
+                                    this.setState({refresh:h});
                 // })
             }
 
@@ -188,7 +204,8 @@
                     if(qi===0)qi=ql-1;
                     else qi-=1;
                     this.setState({
-                        qid:qi
+                        qid:qi,
+                        speechtext:""
                     });
                     
                 }
@@ -197,7 +214,8 @@
                     if(qi===ql-1)qi=0;
                     else qi+=1;
                     this.setState({
-                        qid:qi
+                        qid:qi,
+                        speechtext:""
                     });
                 }
             }
@@ -217,23 +235,19 @@
                                         <h4 className="card-title1">Facial and Speech Emotion Recognition</h4>
                                         <p className="card-text1">Answer the questions that follow.You can navigate through questions using previous and next buttons</p>
                                         <div className="videofeed">
+
                                             <Webcam
                                                 style={{
                                                     width:"-webkit-fill-available",float:'left'
                                                 }}
-                                                        audio={false}
-                                                        height={450}
-                                                        ref={this.setRef}
-                                                        screenshotFormat="image/png"
-                                                        width={400}
-                                                        videoConstraints={videoConstraints}
-                                                        
+                                                audio={false}
+                                                height={450}
+                                                ref={this.setRef}
+                                                screenshotFormat="image/png"
+                                                width={400}
+                                                videoConstraints={videoConstraints}           
                                             />
-                                        </div>
-                                        <div className=" threebuttons">
-                                                {/* <button className="capture" name="capture" onClick={this.captureOne}>Capture</button> */}
-                                                {/* <button className="startrec" name="startrec" onClick={this.Recording}>StartRec</button>
-                                                <button className="stoprec" name="stoprec" onClick={this.Recording}>StopRec</button> */}
+
                                         </div>
                                     </div>
                                 </div>
@@ -249,36 +263,21 @@
                                             <button className="changequesn" name="quesnext" onClick={this.handleQuestion}>Next</button>
                                         </div>
                                         <div className="audio-div">
-                                            
-                                                <ReactMicRecord
+                                                <ReactMicRecord style={{width:"200px"}}
                                                 record={this.state.record}
                                                 className="sound-wave"
                                                 onStop={this.onStop}
                                                 onData={this.onData}
-                                                // strokeColor="#000000"
-                                                // backgroundColor="#FF4081" 
+                                                strokeColor="#000000"
+                                                backgroundColor="#FF4081" 
                                                 />
-                                              
-                                            
                                             </div>
                                         <div className="queschangerow">
                                             <button className="startrec" name="startrec" onClick={this.Recording} type="button">StartRecording</button>
                                             <button className="stoprec" name="stoprec" onClick={this.Recording} type="button">StopRecording</button>
                                         </div>
-                                        {/* <div className="row">
-                                        <textarea type="text" className="givenans" id={"answer"+this.state.qid} name={"answer"+this.state.qid} placeholder="Answer"/>
-                                        <button className="testtogive" onClick={this.submitAnswer}>SubmitAnswer</button>  */}
-                                        {/* {(this.state.showfacescore)&&
-                                        <textarea className="facescore" name={"qscore"+this.state.qid} placeholder="Score" value ={this.state.facevalue}/>
-                                        }  */}
-                                        {/* </div>
-                                        <div className="row" style={{
-                                            position:"absolute",
-                                            right:"9px",
-                                            bottom:"9px"
-                                        }}>
-                                            < button className="addbutton" onClick={this.secondPhase}>Phase2</button>  
-                                        </div> */}
+                        
+                                        
                                     </div>
                                 </div>
                             </div>

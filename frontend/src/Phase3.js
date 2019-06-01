@@ -59,10 +59,12 @@ export default class Phase3 extends Component{
         });
         var i=this.state.num;
         var ll=[]
-        if(i==8)
+        console.log("i",i);
+        if(i===4)
         {
             ll=this.state.quesans3;
         }
+        console.log("ll",ll);
         fetch("http://localhost:8000/ChatterBot/",
     {
         method: 'post',
@@ -95,7 +97,7 @@ export default class Phase3 extends Component{
           mess: ''
         });
 
-        var i=this.state.num;
+        i=this.state.num;
         
         this.setState({
             num:i+1
