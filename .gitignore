@@ -1,0 +1,6 @@
+*.h5
+psycho/env/lib/python3.6/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so
+psycho/env/lib/python3.6/site-packages/scipy/.dylibs/libopenblasp-r0.3.5.dev.dylib
+psycho/env/lib/python3.6/site-packages/numpy/.dylibs/libopenblasp-r0.3.5.dev.dylib
+*.pyc
+psycho/env
